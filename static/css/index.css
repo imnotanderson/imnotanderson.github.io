@@ -3,8 +3,9 @@
  */
 /* commom */
 body {
-	background-image: url(/static/img/canvas_bg1.jpg);
-    font-family: 'Microsoft YaHei', 'SimHei', sans-serif;
+	/*background-image: url(/static/img/canvas_bg1.jpg);*/
+		background-color: #e6e6e6;
+		font-family: 'Microsoft YaHei', 'SimHei', sans-serif;
 }
 article p{
 	/*text-indent: 2em;*/
