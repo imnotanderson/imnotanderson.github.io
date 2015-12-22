@@ -89,17 +89,15 @@ function getFooterMarginTop() {
  */
 function categoryDisplay() {
     /*only show All*/
-    alert(1);
     $('.post-list-body>div[post-cate!=All]').hide();
     /*show category when click categories list*/
     $('.categories-list-item').click(function() {
-        var cate = $(this).attr('cate'); //get category's name
-        // alert(cate);
+        var cate = $(this).attr('cateid'); //get category's name
         gotoCate(cate);
-        $('.post-list-body>div[post-cate!=' + cate + ']').hide(250);
-        $('.post-list-body>div[post-cate=' + cate + ']').show(400);
+        // $('.post-list-body>div[post-cate!=' + cate + ']').hide(250);
+        // $('.post-list-body>div[post-cate=' + cate + ']').show(400);
     });
-
+    parseUrl();
 }
 
 function parseUrl(){
@@ -107,16 +105,13 @@ function parseUrl(){
     var cate = url.split('?')[1];
     if(cate!=undefined)
     {
-        // alert(cate);
+      gotoCate(cate);
     }
-    gotoCate();
 }
 
 function gotoCate(cateId){
-  cateId+=0
-  alert(cateId)
-  $('.post-list-body>div[post-cateId!=' + cateId + ']').hide(250);
-  $('.post-list-body>div[post-cateId=' + cateId + ']').show(400);
+      $('.post-list-body>div[cateid!=' + cateId + ']').hide(250);
+      $('.post-list-body>div[cateid=' + cateId + ']').show(400);
 }
 
 /**
