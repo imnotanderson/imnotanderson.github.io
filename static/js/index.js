@@ -92,11 +92,26 @@ function categoryDisplay() {
     $('.post-list-body>div[post-cate!=All]').hide();
     /*show category when click categories list*/
     $('.categories-list-item').click(function() {
-        var cate = $(this).attr('cate'); //get category's name
-
-        $('.post-list-body>div[post-cate!=' + cate + ']').hide(250);
-        $('.post-list-body>div[post-cate=' + cate + ']').show(400);
+        var cate = $(this).attr('cateid'); //get category's name
+        gotoCate(cate);
+        // $('.post-list-body>div[post-cate!=' + cate + ']').hide(250);
+        // $('.post-list-body>div[post-cate=' + cate + ']').show(400);
     });
+    parseUrl();
+}
+
+function parseUrl(){
+    var url = window.location+'';
+    var cate = url.split('?')[1];
+    if(cate!=undefined)
+    {
+      gotoCate(cate);
+    }
+}
+
+function gotoCate(cateId){
+      $('.post-list-body>div[cateid!=' + cateId + ']').hide(250);
+      $('.post-list-body>div[cateid=' + cateId + ']').show(400);
 }
 
 /**
